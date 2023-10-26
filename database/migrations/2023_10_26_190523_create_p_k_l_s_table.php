@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('p_k_l_s', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('mahasiswa_id')->foreign('id')->on('mahasiswas')->cascadeOnDelete();
+            $table->foreignId('mahasiswa_id')->on('mahasiswas')->onDelete('cascade');;
             $table->integer('status');
             $table->string('nim');
             $table->string('nilai');

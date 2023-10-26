@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('i_r_s', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('mahasiswa_id')->foreign('id')->on('mahasiswas')->cascadeOnDelete();
+            $table->foreignId('mahasiswa_id')->on('mahasiswas')->onDelete('cascade');
             $table->string('nim');
             $table->string('semester');
             $table->integer('jml_sks');
