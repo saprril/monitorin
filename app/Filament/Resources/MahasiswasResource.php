@@ -12,7 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-
+use Filament\Forms\Components\TextInput;
 class MahasiswasResource extends Resource
 {
     protected static ?string $model = Mahasiswas::class;
@@ -23,7 +23,10 @@ class MahasiswasResource extends Resource
     {
         return $form
             ->schema([
-                //
+                TextInput::make('nama'),
+                TextInput::make('nim'),
+                TextInput::make('email'),
+                TextInput::make('password'),
             ]);
     }
 
